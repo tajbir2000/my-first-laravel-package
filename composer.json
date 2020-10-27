@@ -1,16 +1,16 @@
 {
-    "name": ":vendor_name/:package_name",
-    "description": ":package_description",
+    "name": "tajbir2000/my-first-laravel-package",
+    "description": "This is my first laravel package",
     "keywords": [
-        ":vendor_name",
-        ":package_name"
+        "tajbir2000",
+        "my-first-laravel-package"
     ],
-    "homepage": "https://github.com/:vendor_name/:package_name",
+    "homepage": "https://github.com/tajbir2000/my-first-laravel-package",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
+            "name": "Imdadul Haque",
+            "email": "tajbir2000@yahoo.com",
             "homepage": "https://spatie.be",
             "role": "Developer"
         }
@@ -27,13 +27,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src",
-            "Spatie\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Tajbir2000\\MyFirstLaravelPackage\\": "src",
+            "Tajbir2000\\MyFirstLaravelPackage\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Tajbir2000\\MyFirstLaravelPackage\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -48,10 +48,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "Tajbir2000\\MyFirstLaravelPackage\\MyFirstLaravelPackageServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "MyFirstLaravelPackage": "Tajbir2000\\MyFirstLaravelPackage\\MyFirstLaravelPackageFacade"
             }
         }
     },
