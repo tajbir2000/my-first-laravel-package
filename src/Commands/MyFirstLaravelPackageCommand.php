@@ -12,6 +12,6 @@ class MyFirstLaravelPackageCommand extends Command
 
     public function handle()
     {
-        $this->comment('All done');
+        $this->comment(config('my-first-laravel-package.command_output_text'));
     }
 }
