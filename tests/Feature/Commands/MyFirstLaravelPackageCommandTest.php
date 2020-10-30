@@ -3,7 +3,6 @@
 
 namespace Tajbir2000\MyFirstLaravelPackage\Tests\Feature\Commands;
 
-
 use Tajbir2000\MyFirstLaravelPackage\Tests\TestCase;
 
 class MyFirstLaravelPackageCommandTest extends TestCase
