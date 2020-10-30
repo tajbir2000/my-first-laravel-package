@@ -35,10 +35,18 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
           coverage: none
 
-      - name: Create Database
-        run: |
-          sudo /etc/init.d/mysql start
-          mysql -uroot -proot -e 'CREATE DATABASE IF NOT EXISTS laravel_package;'
+      - name: Create database
+        uses: samin/mysql-action@v1
+        with:
+#          host port: 3800 # Optional, default value is 3306. The port of host
+#          container port: 3307 # Optional, default value is 3306. The port of container
+          character set server: 'utf8' # Optional, default value is 'utf8mb4'. The '--character-set-server' option for mysqld
+          collation server: 'utf8_general_ci' # Optional, default value is 'utf8mb4_general_ci'. The '--collation-server' option for mysqld
+          mysql version: '8.0' # Optional, default value is "latest". The version of the MySQL
+          mysql database: 'laravel_package' # Optional, default value is "test". The specified database which will be create
+          mysql root password: 'root' # Required if "mysql user" is empty, default is empty. The root superuser password
+          mysql user: 'developer' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Of course you can use secrets, too
+          mysql password: ${{ secrets.DatabasePassword }} # Required if "mysql user" exists. The password for the "mysql user"
 
       - name: Install dependencies
         run: |
@@ -47,6 +55,3 @@ jobs:
 
       - name: Execute tests
         run: vendor/bin/phpunit
-        env:
-          DB_PORT: ${{ job.services.mysql.ports[3306] }}
-          DB_PASSWORD: root
