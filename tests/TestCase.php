@@ -33,9 +33,8 @@ class TestCase extends Orchestra
             'prefix' => '',
         ]);
 
-        /*
+
         include_once __DIR__.'/../database/migrations/create_my_first_laravel_package_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
+        (new \CreateMyFirstLaravelPackageTable())->up();
     }
 }
