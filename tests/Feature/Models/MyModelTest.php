@@ -3,7 +3,6 @@
 
 namespace Tajbir2000\MyFirstLaravelPackage\Tests\Feature\Models;
 
-
 use Tajbir2000\MyFirstLaravelPackage\Models\MyModel;
 use Tajbir2000\MyFirstLaravelPackage\Tests\TestCase;
 
